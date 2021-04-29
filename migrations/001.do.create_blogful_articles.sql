@@ -3,4 +3,6 @@ CREATE TABLE blogful_articles (
     title TEXT NOT NULL,
     content TEXT,
     date_published TIMESTAMPTZ DEFAULT now() NOT NULL
+    author INTEGER REFERENCES blogful_users(id)
+    ON DELETE SET NULL;
 );
